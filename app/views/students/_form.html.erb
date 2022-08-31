@@ -16,6 +16,9 @@
     <%= form.text_field :name %>
   </div>
 
+  <%= form.label "Teste" %>
+  <%= form.collection_select :school_class_id, SchoolClass.all, :id, :name %>
+
   <div>
     <%= form.submit %>
   </div>

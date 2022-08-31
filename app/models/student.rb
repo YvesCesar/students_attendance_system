@@ -1,8 +1,5 @@
 class Student < ApplicationRecord
   validates :name, presence: true
-  has_one :school_class
-
-  def name_with_initial
-    "#{name}"
-  end
+  belongs_to :school_class
+  accepts_nested_attributes_for :school_class, allow_destroy: true
 end
