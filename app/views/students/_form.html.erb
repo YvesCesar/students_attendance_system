@@ -16,8 +16,11 @@
     <%= form.text_field :name %>
   </div>
 
-  <%= form.label "Teste" %>
+  <%= form.label "Selecione a Turma:" %>
   <%= form.collection_select :school_class_id, SchoolClass.all, :id, :name %>
+
+  <%= form.label "Selecione o Responsável:" %>
+  <%= form.collection_select :responsible_id, Responsible.all, :id, :name %>
 
   <div>
     <%= form.submit %>

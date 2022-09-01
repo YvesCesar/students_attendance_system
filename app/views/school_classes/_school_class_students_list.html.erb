@@ -1,6 +1,6 @@
 
 <% @school_class.students.each do | student | %>
-    <div class="row m-2">
+    <div>
 
         <div> 
             <div>
@@ -8,10 +8,6 @@
                     <%= link_to student.name, student_path(student) %>
                 </div>
             </div>
-        </div>
-        
-        <div>
-            <%= button_to "🗑 Excluir Aluno", student.school_class, method: :delete %>
         </div>
     </div>
 <% end %>
