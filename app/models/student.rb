@@ -3,4 +3,6 @@ class Student < ApplicationRecord
   belongs_to :school_class, optional: true
   accepts_nested_attributes_for :school_class, allow_destroy: true
   belongs_to :responsible, optional: true
+  has_one_attached :image
+  validates :image, presence: true
 end

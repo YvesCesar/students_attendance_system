@@ -3,7 +3,8 @@ require "rails_helper"
 RSpec.describe("students/show", type: :view) do
   before(:each) do
     @student = assign(:student, Student.create!(
-      name: "Name"
+      name: "Name",
+      image: fixture_file_upload(Rails.root.join("spec/assets", "class_model.png"), "image/png")
     ))
   end
 

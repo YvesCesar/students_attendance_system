@@ -3,10 +3,12 @@ require "rails_helper"
 RSpec.describe("students/index", type: :view) do
   before(:each) do
     @student = Student.create!(
-      name: "Yvinho"
+      name: "Yvinho",
+      image: fixture_file_upload(Rails.root.join("spec/assets", "class_model.png"), "image/png")
     )
     @second_student = Student.create!(
-      name: "Wilsinho"
+      name: "Wilsinho",
+      image: fixture_file_upload(Rails.root.join("spec/assets", "class_model.png"), "image/png")
     )
     assign(:students, [ @student, @second_student ])
   end

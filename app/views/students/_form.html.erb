@@ -22,6 +22,9 @@
   <%= form.label "Selecione o Responsável:" %>
   <%= form.collection_select :responsible_id, Responsible.all, :id, :name %>
 
+  <p><%= form.label :image%>
+  <%= form.file_field :image, accept: 'image/png, image/gif, image/jpeg' %></p>
+
   <div>
     <%= form.submit %>
   </div>
