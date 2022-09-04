@@ -18,6 +18,7 @@ RSpec.describe("/students", type: :request) do
   let(:valid_attributes) {
     {
       name: "Yvinho",
+      image: fixture_file_upload(Rails.root.join("spec/assets", "class_model.png"), "image/png"),
     }
   }
 
