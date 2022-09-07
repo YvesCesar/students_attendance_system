@@ -7,6 +7,8 @@
   <%= link_to "Back to school classes", school_classes_path %>
 
   <%= button_to "Destroy this school class", @school_class, method: :delete %>
+
+  <%= button_to "Face Recognition", data: { turbo_click: @school_class.face_recognition } %>
 </div>
 
 <p>Alunos da Turma:</p>
