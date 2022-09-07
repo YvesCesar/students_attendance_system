@@ -1,0 +1,9 @@
+<%= form_with model: [ @school_class, @school_class.frequency_registers.build ] do |form| %>
+    <p>
+      <%= form.label :date_field %><br>
+      <%= form.date_field :date_field %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+<% end %>

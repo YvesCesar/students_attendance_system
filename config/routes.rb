@@ -3,7 +3,9 @@
 Rails.application.routes.draw do
   resources :responsibles
   resources :students
-  resources :school_classes
+  resources :school_classes do
+    resources :frequency_registers
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

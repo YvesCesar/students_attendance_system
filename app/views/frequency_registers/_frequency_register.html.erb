@@ -1,0 +1,13 @@
+<p>
+  <strong>Data:</strong>
+  <%= frequency_register.date_field %>
+</p>
+
+<p>
+    <%= 
+        button_to 'Destroy Frequency Register',
+        [frequency_register.school_class, frequency_register],
+        method: :delete,
+        :onclick => "return confirm('Are you sure you want to delete this frequency register?')"
+    %>
+</p>
