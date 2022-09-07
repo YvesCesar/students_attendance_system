@@ -2,7 +2,11 @@ class FrequencyRegistersController < ApplicationController
   def new
     @school_class = SchoolClass.find(params[:school_class_id])
     @frequency_register = FrequencyRegister.new
-    @face_recognition_exec = system("python3 python/face_recognition_example.py")
+    script_data = ""
+    @school_class.students.each do |student|
+        script_data += student.id.to_s + "," + student.name + "," + url_for(student.image) + ";"
+    end
+    @face_recognition_exec = `python3 python/face_recognition_example.py #{script_data.to_s}`
   end
 
   def create
