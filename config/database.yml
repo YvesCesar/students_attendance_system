@@ -2,6 +2,7 @@ default: &default
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  encoding: unicode
   username: <%= ENV['RAILS_DB_USERNAME'] %>
   password: <%= ENV['RAILS_DB_PASSWORD'] %>
 
