@@ -1,6 +1,6 @@
 class SchoolClass < ApplicationRecord
   validates :name, presence: true
-  has_many :students
+  has_many :students, :frequency_registers
   accepts_nested_attributes_for :students
 
   def face_recognition
