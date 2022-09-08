@@ -1,10 +1,10 @@
 <h1>New frequency register</h1>
 
-<%= render "form", frequency_register: @frequency_register %>
+<%= render "form", frequency_register: @frequency_register, students_id: @students_id %>
 
 <div id="students_registered">
-  <% @studentsRegistered.each do |student| %>
-    <p><strong>Estudantes registrados:</strong></p>
+  <p><strong>Estudantes detectados:</strong></p>
+  <% @students_registered.each do |student| %>
     <p>
       <%= link_to student.name, student %>
     </p>

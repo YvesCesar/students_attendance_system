@@ -6,12 +6,13 @@ class FrequencyRegistersController < ApplicationController
     @school_class.students.each do |student|
       script_data += student.id.to_s + "," + student.name + "," + url_for(student.image) + ";"
     end
-    @face_recognition_output = `python3 python/students_face_recognition.py #{script_data}`
-    studentsId = @face_recognition_output.split(",")
-    @studentsRegistered = Array.new
-    studentsId.each do |studentId|
-      if !studentId.empty? && studentId != "\n"
-        @studentsRegistered.append(Student.find(studentId))
+    @face_recognition_output = `python3 python/students_face_recognition.py "#{script_data}"`
+    @students_id = @face_recognition_output.split(",")
+    @students_registered = Array.new
+    @students_id.each do |student_id|
+      if !student_id.empty? && student_id != "\n"
+        student = Student.find(student_id)
+        @students_registered.append(student)
       end
     end
   end
@@ -19,6 +20,16 @@ class FrequencyRegistersController < ApplicationController
   def create
     @school_class = SchoolClass.find(params[:school_class_id])
     @frequency_register = @school_class.frequency_registers.create(frequency_register_params)
+    @students_registered = register_params
+    @students_registered.each do |student_data|
+      student_id = student_data[1].split(" ")
+      student_id.each do |id|
+        if !id.empty? && id != "\n"
+          student = Student.find(id)
+          @register = Register.create(frequency_register: @frequency_register, student: student)
+        end
+      end
+    end
     redirect_to(school_class_path(@school_class))
   end
 
@@ -32,5 +43,9 @@ class FrequencyRegistersController < ApplicationController
     private
       def frequency_register_params
         params.require(:frequency_register).permit(:date_field)
+      end
+
+      def register_params
+        params.require(:frequency_register).permit(:students_id)
       end
 end

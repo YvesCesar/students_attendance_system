@@ -3,6 +3,9 @@
   <%= frequency_register.date_field %>
 </p>
 
+<strong>Alunos presentes:</strong>
+<%= render frequency_register.registers %>
+
 <p>
     <%= 
         button_to 'Destroy Frequency Register',
