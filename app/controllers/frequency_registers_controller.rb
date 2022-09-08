@@ -4,9 +4,16 @@ class FrequencyRegistersController < ApplicationController
     @frequency_register = FrequencyRegister.new
     script_data = ""
     @school_class.students.each do |student|
-        script_data += student.id.to_s + "," + student.name + "," + url_for(student.image) + ";"
+      script_data += student.id.to_s + "," + student.name + "," + url_for(student.image) + ";"
     end
-    @face_recognition_exec = `python3 python/face_recognition_example.py #{script_data.to_s}`
+    @face_recognition_output = `python3 python/students_face_recognition.py #{script_data}`
+    studentsId = @face_recognition_output.split(",")
+    @studentsRegistered = Array.new
+    studentsId.each do |studentId|
+      if !studentId.empty? && studentId != "\n"
+        @studentsRegistered.append(Student.find(studentId))
+      end
+    end
   end
 
   def create

@@ -2,6 +2,15 @@
 
 <%= render "form", frequency_register: @frequency_register %>
 
+<div id="students_registered">
+  <% @studentsRegistered.each do |student| %>
+    <p><strong>Estudantes registrados:</strong></p>
+    <p>
+      <%= link_to student.name, student %>
+    </p>
+  <% end %>
+</div> 
+
 <br>
 
 <div>
