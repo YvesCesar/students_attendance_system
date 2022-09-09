@@ -27,6 +27,7 @@ class FrequencyRegistersController < ApplicationController
         if !id.empty? && id != "\n"
           student = Student.find(id)
           @register = Register.create(frequency_register: @frequency_register, student: student)
+          StudentMailer.notifies_responsible(student, @school_class, @frequency_register).deliver_now!
         end
       end
     end
