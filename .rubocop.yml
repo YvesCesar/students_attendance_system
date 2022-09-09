@@ -312,3 +312,6 @@ Performance/DeleteSuffix:
 
 Minitest/UnreachableAssertion:
   Enabled: true
+
+Style/CommandLiteral:
+  Enabled: false

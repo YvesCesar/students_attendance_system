@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_03_004358) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_07_202422) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_03_004358) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "frequency_registers", force: :cascade do |t|
+    t.bigint "school_class_id", null: false
+    t.date "date_field"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_class_id"], name: "index_frequency_registers_on_school_class_id"
+  end
+
+  create_table "registers", force: :cascade do |t|
+    t.bigint "frequency_register_id", null: false
+    t.bigint "student_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["frequency_register_id"], name: "index_registers_on_frequency_register_id"
+    t.index ["student_id"], name: "index_registers_on_student_id"
+  end
+
   create_table "responsibles", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -67,6 +84,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_03_004358) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "frequency_registers", "school_classes"
+  add_foreign_key "registers", "frequency_registers"
+  add_foreign_key "registers", "students"
   add_foreign_key "students", "responsibles"
   add_foreign_key "students", "school_classes"
 end

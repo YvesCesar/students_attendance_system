@@ -1,0 +1,13 @@
+<%= form_with model: [ @school_class, @school_class.frequency_registers.build ] do |form| %>
+    <div class="field">
+			<%= form.hidden_field :students_id, value: @students_id %>
+		</div>
+
+    <p>
+      <%= form.label :date_field %><br>
+      <%= form.date_field :date_field %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+<% end %>
