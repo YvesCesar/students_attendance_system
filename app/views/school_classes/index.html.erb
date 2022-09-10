@@ -1,14 +1,24 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>School classes</h1>
-
+<h1>Turmas</h1>
+<br><br>
+<%= link_to "Cadastrar turma", new_school_class_path, class: "btn btn-primary me-1 flex-grow-1" %>
+<br><br>
 <div id="school_classes">
-  <% @school_classes.each do |school_class| %>
-    <%= render school_class %>
-    <p>
-      <%= link_to "Show this school class", school_class %>
-    </p>
-  <% end %>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Turma</th>
+      <th scope="col">Dados da turma</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @school_classes.each do |school_class| %>
+      <tr>
+        <th scope="row"><%= school_class.name %></th>
+        <td><%= link_to "Mostrar esta turma", school_class %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
 </div>
-
-<%= link_to "New school class", new_school_class_path %>
