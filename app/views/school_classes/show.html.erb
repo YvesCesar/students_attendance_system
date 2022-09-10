@@ -3,16 +3,18 @@
 <%= render @school_class %>
 
 <div>
-  <%= link_to "Edit this school class", edit_school_class_path(@school_class) %> |
-  <%= link_to "Back to school classes", school_classes_path %>
+  <%= link_to "Editar esta turma", edit_school_class_path(@school_class), class: "btn btn-outline-primary" %>
+  <%= link_to "Voltar para turmas", school_classes_path, class: "btn btn-outline-primary" %>
 
-  <%= button_to "Destroy this school class", @school_class, method: :delete %>
+  <%= button_to "Excluir esta turma", @school_class, method: :delete, class: "btn btn-danger" %>
 </div>
-
-<h2>Registros de frequência</h2>
-<%= render @school_class.frequency_registers %>
-
-<%= link_to "Criar um Registro de Frequência", new_school_class_frequency_register_path(@school_class) %>
-
-<p>Alunos da Turma:</p>
+<br>
 <%= render "school_classes/school_class_students_list" %>
+<br>
+<div>
+  <h2>Registros de frequência</h2>
+  <br>
+  <%= link_to "Criar um Registro de Frequência", new_school_class_frequency_register_path(@school_class), class: "btn btn-primary" %>
+</div>
+<br>
+<%= render @school_class.frequency_registers %>

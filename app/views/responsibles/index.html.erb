@@ -1,14 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Responsibles</h1>
+<h1>Responsáveis</h1>
+<br>
+<%= link_to "Cadastrar responsável", new_responsible_path, class: "btn btn-primary" %>
+<br>
 
 <div id="responsibles">
-  <% @responsibles.each do |responsible| %>
-    <%= render responsible %>
-    <p>
-      <%= link_to "Show this responsible", responsible %>
-    </p>
-  <% end %>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Responsável</th>
+      <th scope="col">Dados do responsável</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @responsibles.each do |responsible| %>
+      <tr>
+        <th scope="row"><%= responsible.name %></th>
+        <td><%= link_to "Mostrar este responsável", responsible %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
 </div>
-
-<%= link_to "New responsible", new_responsible_path %>
