@@ -3,7 +3,7 @@
 <%= render "form", frequency_register: @frequency_register, students_id: @students_id %>
 
 <div id="students_registered">
-  <p><strong>Estudantes detectados:</strong></p>
+  <p><strong>Alunos detectados:</strong></p>
   <% @students_registered.each do |student| %>
     <p>
       <%= link_to student.name, student %>

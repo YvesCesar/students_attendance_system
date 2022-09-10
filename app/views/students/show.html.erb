@@ -9,9 +9,9 @@
             <div class="d-flex text-black">
                 <%= render @student %>
                 <div class="d-flex pt-1">
-                  <%= link_to "Editar estudante", edit_student_path(@student), class: "btn btn-outline-primary me-1 flex-grow-1" %>
-                  <%= link_to "Voltar para estudantes", students_path, class: "btn btn-outline-primary me-1 flex-grow-1" %>
-                  <%= button_to "Excluir este estudante", @student, method: :delete, class: "btn btn-danger flex-grow-1 red" %>
+                  <%= link_to "Editar aluno", edit_student_path(@student), class: "btn btn-outline-primary me-1 flex-grow-1" %>
+                  <%= link_to "Voltar para alunos", students_path, class: "btn btn-outline-primary me-1 flex-grow-1" %>
+                  <%= button_to "Excluir este aluno", @student, method: :delete, class: "btn btn-danger flex-grow-1 red" %>
                 </div>
               </div>
             </div>
