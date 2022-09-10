@@ -17,8 +17,6 @@ RSpec.describe("responsibles/index", type: :view) do
   it "renders a list of responsibles" do
     render
     expect(rendered).to(have_text(@responsible.name))
-    expect(rendered).to(have_text(@responsible.email))
     expect(rendered).to(have_text(@second_responsible.name))
-    expect(rendered).to(have_text(@second_responsible.email))
   end
 end
