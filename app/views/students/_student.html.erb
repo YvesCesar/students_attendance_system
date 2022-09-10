@@ -1,8 +1,20 @@
-<div id="<%= dom_id student %>">
-  <p>
-    <strong>Name:</strong>
-    <%= student.name %>
-  </p>
-  <img src="<%= (url_for(student.image)) %>">
-
+<div class="flex-shrink-0" id="<%= dom_id student %>">
+  <img src="<%= (url_for(student.image)) %>"
+    alt="Generic placeholder image" class="img-fluid"
+    style="width: 180px; border-radius: 10px;">
+</div>
+<div class="flex-grow-1 ms-3">
+  <h5 class="mb-1"><%= student.name %></h5>
+  <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
+    style="background-color: #efefef;">
+    <div>
+      <p class="small text-muted mb-1">Turma</p>
+      <p class="mb-0"><%= student.school_class.name %></p>
+    </div>
+    <div class="px-3">
+    </div>
+    <div>
+      <p class="small text-muted mb-1">Responsável</p>
+      <p class="mb-0"><%= student.responsible.name %></p>
+    </div>
 </div>

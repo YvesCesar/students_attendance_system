@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     resources :frequency_registers
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
   # Defines the root path route ("/")
-  root "school_classes#index"
+
+  get "home", to: "home#index"
+
+  root "home#index"
 end
