@@ -8,10 +8,13 @@
 
   <%= button_to "Excluir esta turma", @school_class, method: :delete, class: "btn btn-danger" %>
 </div>
-
-<h2>Registros de frequência</h2>
-<%= render @school_class.frequency_registers %>
-
-<%= link_to "Criar um Registro de Frequência", new_school_class_frequency_register_path(@school_class) %>
-
+<br>
 <%= render "school_classes/school_class_students_list" %>
+<br>
+<div>
+  <h2>Registros de frequência</h2>
+  <br>
+  <%= link_to "Criar um Registro de Frequência", new_school_class_frequency_register_path(@school_class), class: "btn btn-primary" %>
+</div>
+<br>
+<%= render @school_class.frequency_registers %>
