@@ -1,11 +1,13 @@
-<p style="color: green"><%= notice %></p>
+<div class="main"> 
+  <p style="color: green"><%= notice %></p>
 
-<h1>Responsável</h1>
-<%= render @responsible %>
+  <h1>Responsável</h1>
+  <%= render @responsible %>
 
-<div>
-  <%= link_to "Editar este responsável", edit_responsible_path(@responsible), class: "btn btn-outline-primary me-1 flex-grow-1" %>
-  <%= link_to "Voltar para responsáveis", responsibles_path, class: "btn btn-outline-primary me-1 flex-grow-1" %>
-
-  <%= button_to "Exlcuir este responsável", @responsible, method: :delete, class: "btn btn-danger flex-grow-1" %>
+  <div class="buttons-list">
+    <%= link_to "Editar este responsável", edit_responsible_path(@responsible), class: "btn btn-outline-primary me-1 flex-grow-1" %>
+    <%= button_to "Exlcuir este responsável", @responsible, method: :delete, class: "btn btn-danger flex-grow-1" %>
+  </div>  
+    <%= link_to "Voltar para responsáveis", responsibles_path %>
+  
 </div>

@@ -4,7 +4,7 @@ RSpec.describe("responsibles/new", type: :view) do
   before(:each) do
     assign(:responsible, Responsible.new(
       name: "MyString",
-      email: "MyString"
+      email: "MyString",
     ))
   end
 

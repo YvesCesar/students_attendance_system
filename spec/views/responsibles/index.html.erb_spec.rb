@@ -4,11 +4,11 @@ RSpec.describe("responsibles/index", type: :view) do
   before(:each) do
     @responsible = Responsible.create!(
       name: "Yves",
-      email: "Email@naoexiste.com"
+      email: "Email@naoexiste.com",
     )
     @second_responsible = Responsible.create!(
       name: "César",
-      email: "Email@naoexiste.com"
+      email: "Email@naoexiste.com",
     )
 
     assign(:responsibles, [ @responsible, @second_responsible ])

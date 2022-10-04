@@ -67,7 +67,7 @@ class SchoolClassesController < ApplicationController
     def school_class_params
       params.require(:school_class).permit(
         :name,
-        students_attributes: [:id, :name, :_destroy]
+        students_attributes: [:id, :name, :_destroy],
       )
     end
 end

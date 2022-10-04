@@ -13,3 +13,93 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+    background: #f1f1f1;
+}
+.body {
+    display: flex;
+}
+.students{
+    width: 30%;
+    margin-bottom: 30px;
+  }
+.main{
+    width: 100%;
+    margin: 0 50px;
+    margin-top: 35px;
+    padding: 20px;
+    background: #ffff;
+    border-radius: 5px;
+}
+.titulo{
+    margin: 0 auto;
+}
+aside{
+    width: 200px;
+}
+.white-color{
+    background: #ffff;
+}
+.color{
+    background: #00306e !important;
+    padding: 10px 0;
+}
+.sidebar-nav{
+    list-style: none;
+}
+.nav-item{
+    border:1px solid #c9c3c3;
+    border-top: none;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+.nav-item > i{
+    font-size: 21px;
+    color: #00306e;
+}
+.nav-link{
+    color: #00306e !important;
+}
+.navbarNavDropdown{
+    padding: 0;
+}
+ul, li {
+    padding: 0px;
+    margin: 0px;
+}
+.container-fluid > a{
+    text-decoration: none !important;
+    font-weight: bold;
+    font-size: 21px;
+    color: #ffff;
+}
+
+.buttons-list{
+    display: grid;
+    margin-bottom: 20px;
+}
+.buttons-list > .btn, .buttons-list > form > .btn{
+    width: 15%;
+    margin-bottom: 10px;
+}
+
+.ph-student{
+    font-size: 30px;
+}
+
+.form{
+    margin: 20px 0 20px 0;
+}
+.label{
+    display: block;
+    margin-bottom: 5px;
+}
+.label-student{
+    margin-top: 15px;
+}
+.email{
+    margin-top: 10px;
+}

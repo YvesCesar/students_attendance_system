@@ -6,7 +6,7 @@ RSpec.describe("students/show", type: :view) do
       name: "Name",
       school_class: SchoolClass.create(name: "3 ano 3"),
       responsible: Responsible.create(name: "Yves", email: "yves@naoexiste.com"),
-      image: fixture_file_upload(Rails.root.join("spec/assets", "class_model.png"), "image/png")
+      image: fixture_file_upload(Rails.root.join("spec/assets", "class_model.png"), "image/png"),
     ))
   end
 

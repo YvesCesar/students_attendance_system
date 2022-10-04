@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe("school_classes/edit", type: :view) do
   before(:each) do
     @school_class = assign(:school_class, SchoolClass.create!(
-      name: "MyString"
+      name: "MyString",
     ))
   end
 

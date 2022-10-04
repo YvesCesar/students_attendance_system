@@ -10,18 +10,19 @@
       </ul>
     </div>
   <% end %>
-
+<div class="form">
   <div>
-    <%= form.label "Nome", style: "display: block" %>
+    <%= form.label "Nome", class: "label" %>
     <%= form.text_field :name %>
   </div>
 
-  <div>
-    <%= form.label "E-mail", style: "display: block" %>
+  <div class="email">
+    <%= form.label "E-mail", class: "label" %>
     <%= form.text_field :email %>
   </div>
   <br>
   <div>
     <%= form.submit "Salvar", class: "btn btn-primary" %>
   </div>
+</div>
 <% end %>

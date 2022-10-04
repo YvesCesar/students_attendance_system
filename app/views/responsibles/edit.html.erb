@@ -1,10 +1,12 @@
-<h1>Editando responsável</h1>
+<div class="main">
+  <h1>Editando responsável</h1>
 
-<%= render "form", responsible: @responsible %>
+  <%= render "form", responsible: @responsible %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Mostrar este responsável", @responsible %> |
-  <%= link_to "Voltar para responsáveis", responsibles_path %>
+  <div>
+    <%= link_to "Mostrar este responsável", @responsible %> |
+    <%= link_to "Voltar para responsáveis", responsibles_path %>
+  </div>
 </div>
