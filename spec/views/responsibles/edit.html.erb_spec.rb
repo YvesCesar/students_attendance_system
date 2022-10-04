@@ -4,7 +4,7 @@ RSpec.describe("responsibles/edit", type: :view) do
   before(:each) do
     @responsible = assign(:responsible, Responsible.create!(
       name: "MyString",
-      email: "MyString@naoexiste.com"
+      email: "MyString@naoexiste.com",
     ))
   end
 

@@ -3,10 +3,10 @@ require "rails_helper"
 RSpec.describe("school_classes/index", type: :view) do
   before(:each) do
     @schoolClass = SchoolClass.create!(
-      name: "3 ano 3"
+      name: "3 ano 3",
     )
     @second_schoolClass = SchoolClass.create!(
-      name: "4 ano"
+      name: "4 ano",
     )
     assign(:school_classes, [ @schoolClass, @second_schoolClass ])
   end
