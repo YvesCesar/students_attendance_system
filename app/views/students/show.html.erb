@@ -1,17 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<div class="main"> 
+  <p style="color: green"><%= notice %></p>
 
-<section class="vh-100">
-  <div class="h-100">
-    <div class="row d-flex h-100">
-      <div class="col col-md-9 col-lg-7 col-xl-5">
-        <div class="card" style="border-radius: 15px;">
-          <div class="card-body p-4">
-            <div class="d-flex text-black">
-                <%= render @student %>
-                <div class="d-flex pt-1">
-                  <%= link_to "Editar aluno", edit_student_path(@student), class: "btn btn-outline-primary me-1 flex-grow-1" %>
-                  <%= link_to "Voltar para alunos", students_path, class: "btn btn-outline-primary me-1 flex-grow-1" %>
-                  <%= button_to "Excluir este aluno", @student, method: :delete, class: "btn btn-danger flex-grow-1" %>
+  <section class="vh-100">
+    <div class="h-100">
+      <div class="row d-flex h-100">
+        <div class="col col-md-9 col-lg-7 col-xl-5">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-4">
+              <div class="d-flex text-black">
+                  <%= render @student %>
+                  <div class="d-flex pt-1">
+                    <%= link_to "Editar aluno", edit_student_path(@student), class: "btn btn-outline-primary me-1 flex-grow-1" %>
+                    <%= link_to "Voltar para alunos", students_path, class: "btn btn-outline-primary me-1 flex-grow-1" %>
+                    <%= button_to "Excluir este aluno", @student, method: :delete, class: "btn btn-danger flex-grow-1" %>
+                  </div>
                 </div>
               </div>
             </div>
@@ -19,5 +21,5 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>

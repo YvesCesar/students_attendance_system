@@ -1,10 +1,12 @@
-<h1>Editando turma</h1>
+<div class="main">  
+  <h1>Editando turma</h1>
 
-<%= render "form", school_class: @school_class %>
+  <%= render "form", school_class: @school_class %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Mostrar esta turma", @school_class %> |
-  <%= link_to "Voltar para turmas", school_classes_path %>
+  <div>
+    <%= link_to "Mostrar esta turma", @school_class %> |
+    <%= link_to "Voltar para turmas", school_classes_path %>
+  </div>
 </div>

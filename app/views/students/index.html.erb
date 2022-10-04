@@ -1,29 +1,30 @@
 <p style="color: green"><%= notice %></p>
+<div class="main">
+  <h1>Alunos</h1>
+  <br><br>
+  <%= link_to "Cadastrar aluno", new_student_path, class: "btn btn-primary me-1 flex-grow-1" %>
+  <br><br>
+  <div id="students">
 
-<h1>Alunos</h1>
-<br><br>
-<%= link_to "Cadastrar aluno", new_student_path, class: "btn btn-primary me-1 flex-grow-1" %>
-<br><br>
-<div id="students">
-
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Aluno(a)</th>
-        <th scope="col">Turma</th>
-        <th scope="col">Responsável</th>
-        <th scope="col">Dados do(a) aluno(a)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @students.each do |student| %>
+    <table class="table">
+      <thead>
         <tr>
-          <th scope="row"><%= student.name %></th>
-          <td><%= student.school_class.name %></td>
-          <td><%= student.responsible.name %></td>
-          <td><%= link_to "Mostrar este estudante", student %></td>
+          <th scope="col">Aluno(a)</th>
+          <th scope="col">Turma</th>
+          <th scope="col">Responsável</th>
+          <th scope="col">Dados do(a) aluno(a)</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @students.each do |student| %>
+          <tr>
+            <th scope="row"><%= student.name %></th>
+            <td><%= student.school_class.name %></td>
+            <td><%= student.responsible.name %></td>
+            <td><%= link_to "Mostrar este estudante", student %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

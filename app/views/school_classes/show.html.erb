@@ -1,20 +1,21 @@
-<p style="color: green"><%= notice %></p>
+<div class="main">
+  <p style="color: green"><%= notice %></p>
+  <h2>Turma</h2>
+  <%= render @school_class %>
 
-<%= render @school_class %>
-
-<div>
-  <%= link_to "Editar esta turma", edit_school_class_path(@school_class), class: "btn btn-outline-primary" %>
-  <%= link_to "Voltar para turmas", school_classes_path, class: "btn btn-outline-primary" %>
-
-  <%= button_to "Excluir esta turma", @school_class, method: :delete, class: "btn btn-danger" %>
-</div>
-<br>
-<%= render "school_classes/school_class_students_list" %>
-<br>
-<div>
-  <h2>Registros de frequência</h2>
+  <div class="buttons-list">
+    <%= link_to "Editar esta turma", edit_school_class_path(@school_class), class: "btn btn-outline-primary" %>
+    <%= button_to "Excluir esta turma", @school_class, method: :delete, class: "btn btn-danger" %>
+    <%= link_to "Voltar para turmas", school_classes_path, class: "btn btn-outline-primary" %>
+  </div>
   <br>
-  <%= link_to "Criar um Registro de Frequência", new_school_class_frequency_register_path(@school_class), class: "btn btn-primary" %>
+  <%= render "school_classes/school_class_students_list" %>
+  <br>
+  <div>
+    <h2>Registros de frequência</h2>
+    <br>
+    <%= link_to "Criar um Registro de Frequência", new_school_class_frequency_register_path(@school_class), class: "btn btn-primary" %>
+  </div>
+  <br>
+  <%= render @school_class.frequency_registers %>
 </div>
-<br>
-<%= render @school_class.frequency_registers %>

@@ -1,6 +1,8 @@
-<ul class="list-group">
-  <li class="list-group-item active">Alunos da Turma</li>
-  <% @school_class.students.each do | student | %>
-    <li class="list-group-item"><%= link_to student.name, student_path(student) %></li>
-  <% end %>
-</ul>
+<div class="students">
+  <ul class="list-group">
+    <li class="list-group-item active">Alunos da Turma</li>
+      <% @school_class.students.each do | student | %>
+        <li class="list-group-item"><%= link_to student.name, student_path(student) %></li>
+      <% end %>
+  </ul>
+</div>

@@ -1,10 +1,12 @@
-<h1>Editando aluno</h1>
+<div class="main">
+  <h1>Editando aluno</h1>
 
-<%= render "form", student: @student %>
+  <%= render "form", student: @student %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Mostrar este aluno", @student %> |
-  <%= link_to "Voltar para alunos", students_path %>
+  <div>
+    <%= link_to "Mostrar este aluno", @student %> |
+    <%= link_to "Voltar para alunos", students_path %>
+  </div>
 </div>
