@@ -2,19 +2,11 @@ class FrequencyRegistersController < ApplicationController
   def new
     @school_class = SchoolClass.find(params[:school_class_id])
     @frequency_register = FrequencyRegister.new
-    script_data = ""
-    @school_class.students.each do |student|
-      script_data += student.id.to_s + "," + student.name + "," + url_for(student.image) + ";"
-    end
-    @face_recognition_output = `python3 python/students_face_recognition.py "#{script_data}"`
-    @students_id = @face_recognition_output.split(",")
-    @students_registered = Array.new
-    @students_id.each do |student_id|
-      if !student_id.empty? && student_id != "\n"
-        student = Student.find(student_id)
-        @students_registered.append(student)
-      end
-    end
+    script_data = @school_class.students.map { |student|
+ "#{student.id},#{student.name},#{url_for(student.image)}" }.join(";")
+    @students_id = `python3 python/students_face_recognition.py "#{script_data}"`.split(",").reject { |id|
+ id.empty? || id == "\n" }
+    @students_registered = Student.where(id: @students_id)
   end
 
   def create
