@@ -13,9 +13,6 @@ ___
 
 This project arose from a demand in the city of Manaus/Brazil, where teachers reported problems with manual registration of student attendance. Given the data survey, we solved it with a scientific research: [School attendance management system for students through facial recognition](https://itegam-jetia.org/journal/index.php/jetia/article/view/838).
 
-Sistema de registro de frequência de alunos com reconhecimento facial
-Este projeto surgiu de uma demanda em Manaus/Brasil, onde professores relataram problemas com o registro manual de frequência de alunos. Para solucionar esse problema, foi realizada uma pesquisa científica e desenvolvido um sistema de gerenciamento de frequência escolar baseado em reconhecimento facial.
-
 ### Dependencies
 
 To run this project, you will need the following dependencies:
