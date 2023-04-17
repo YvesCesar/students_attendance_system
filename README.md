@@ -1,6 +1,6 @@
-# Students Frequency System
+# Students Attendence System
 
-Register students frequency with facial recognition
+Register students attendence with facial recognition
 
 ___
 ![rspec](https://ruby.ci/badges/bc0914c8-e046-4382-8d56-c0440503feb5/rspec)
