@@ -35,7 +35,7 @@ git clone https://github.com/YvesCesar/students_attendance_system.git
 Enter the project folder:
 
 ```shell
-cd students_frequency_system
+cd students_attendance_system
 ```
 
 Install Ruby dependencies:
@@ -51,7 +51,7 @@ rails db:create
 rails db:migrate
 ```
 
-Clone the student frequency registration submodule:
+Clone the student frequency attendance submodule:
 
 ```shell
 git submodule init
