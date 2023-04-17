@@ -29,7 +29,7 @@ To run this project, you will need the following dependencies:
 Clone this repository:
 
 ```shell
-git clone https://github.com/YvesCesar/students_frequency_system.git
+git clone https://github.com/YvesCesar/students_attendance_system.git
 ```
 
 Enter the project folder:
